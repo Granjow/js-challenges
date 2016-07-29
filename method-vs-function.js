@@ -13,10 +13,11 @@ var beautify = function ( functionReturningName ) {
 
 var fritz = new Person( 'Fritz' );
 
-// Funktioniert
-beautify( () => 'Robin' );
+// Works
+var returnAName = () => 'Robin';
+beautify( returnAName );
 
-// Funktioniert nicht
-// 1. Weshalb?
-// 2. Wie kann man das lösen, ohne die vorherigen Zeilen zu ändern (angenommen, Person und beautify sind Library-Funktionen)?
-beautify( fritz.getName() );
+// Does not work
+// 1. Why?
+// 2. How can this be fixed without changing the previous lines (assuming that Person and beautify() are library functions)?
+beautify( fritz.getName );

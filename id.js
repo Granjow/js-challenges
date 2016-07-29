@@ -8,5 +8,5 @@ console.log( 'Some unique IDs: ' );
 console.log( 'Next ID: ', nextId() );
 id = 20;
 console.log( 'Next ID: ', nextId() );
-// Ups.
-// 1. nextId so umbauen, dass id von aussen nicht mehr zurückgesetzt werden kann.
+// Oops.
+// 1. Re-write nextId such that id cannot be reset anymore from the outside.
