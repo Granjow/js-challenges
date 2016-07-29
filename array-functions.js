@@ -1,55 +1,55 @@
 var ages = [ 2, 3, 4, 10, 50, 42 ];
 
-// 1. Ersetzen durch Array.map()
-//    Bonuspunkte für Arrowfunktion :) (in ganzer Datei!)
+// 1. Replace by Array.map()
+//    Bonus points for using arrow functions! (Applies to whole file!)
 var ageObjects = [];
 for ( var i = 0; i < ages.length; i++ ) {
     ageObjects.push( { age: ages[ i ] } );
 }
-// Ende
+// End
 
-// 2. Ersetzen durch Array.reduce()
-//    Wieder ein Einzeiler!
+// 2. Replace by Array.reduce()
+//    Again, this should result in a one-liner.
 var ageSum = 0;
 for ( var i = 0; i < ages.length; i++ ) {
     ageSum += ages[ i ];
 }
-// Ende
+// End
 
-// 3. Ersetzen durch Array.reduce()
+// 3. Replace by Array.reduce()
 var maxAge = 0;
 for ( var i = 0; i < ageObjects.length; i++ ) {
     if ( maxAge < ageObjects[ i ].age ) {
         maxAge = ageObjects[ i ].age;
     }
 }
-// Ende
+// End
 
 var size = [ 23, 33.2, 34.5, 14.7, 6.543 ];
 
-// 4. Ersetzen durch Arrowfunktion
+// 4. Replace by arrow function
 var fMax = function ( a, b ) {
     return Math.max( a, b );
 };
-// Ende
+// End
 
 
-// 5. Ersetzen durch Array.reduce()
-//    Diesmal fMax verwenden
+// 5. Replace by Array.reduce()
+//    Use fMax this time.
 var maxSize = 0;
 for ( var i = 0; i < size.length; i++ ) {
     maxSize = fMax( maxSize, size[ i ] );
 }
-// Ende
+// End
 
-// 6. Array.reduce einsetzen.
-//    Ganz viele Bonuspunkte und ein Pokéball, wenn fürs .reduce()-Callback die fMax-Funktion direkt verwendet wird
-//    (Ohne Parameterübergabe oder ähnlich). Hint: 1. Aufgabe.
+// 6. Use Array.reduce().
+//    Loads of bonus points and a Pokéball when using fMax like .reduce( fMax ). This requires an additional step beforehand,
+//    use task 1 as hint!
 var maxAge2 = 0;
 for ( var i = 0; i < ageObjects.length; i++ ) {
     maxAge2 = fMax( maxAge2, ageObjects[ i ].age );
 }
-// Ende
+// End
 
 var test = ( nr, res ) => console.log( nr + ': ' + (res === true ? 'ok' : (res === false ? 'nope' : 'unknown (self-check)')) );
 test( 1, ageObjects[ 2 ].age === ages[ 2 ] );

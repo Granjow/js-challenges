@@ -1,7 +1,8 @@
 # JavaScript challenges
 
 The challenges in this repository examine some special features in JavaScript which are
-less common in other languages.
+less common in other languages. Note that this is code which has to be corrected, i.e. it 
+does *NOT* follow good practises! You have to write good code by yourself. 
 
 Run them e.g. in WebStorm directly, or with node.js from the command line, to see the output.
 
