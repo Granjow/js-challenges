@@ -6,6 +6,7 @@ var f1 = () => {
         console.log( 'f1 done.' );
         deferred.resolve( true );
     }, Math.random() * 2000 );
+    return deferred.promise;
 };
 var f2 = () => {
     var deferred = Q.defer();
@@ -13,6 +14,7 @@ var f2 = () => {
         console.log( 'f2 done.' );
         deferred.resolve( true );
     }, Math.random() * 2000 );
+    return deferred.promise;
 };
 var f3 = () => {
     var deferred = Q.defer();
@@ -20,6 +22,7 @@ var f3 = () => {
         console.log( 'f3 done.' );
         deferred.resolve( true );
     }, Math.random() * 2000 );
+    return deferred.promise;
 };
 
 var fEnd = () => {
