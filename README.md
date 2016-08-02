@@ -6,7 +6,13 @@ does *NOT* follow good practises! You have to write good code by yourself.
 
 Run them e.g. in WebStorm directly, or with node.js from the command line, to see the output.
 
+There are also **Q Challenges** for the library (Q)[https://www.npmjs.com/package/q] which examine
+some common asynchronous situations. To get started, first install the required npm modules:
+
+    npm install
+
 References:
+
 * **[GP]** *JavaScript: The Good Parts* by Donald Crockford
 * **[JP]** *JavaScript Patterns* by Stoyan Stefanov
 
@@ -38,3 +44,12 @@ The `this` object is bound to the global object for function calls (different fo
 See [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map),
 [Array.prototype.forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 and others.
+
+
+## Q Challenges
+
+See the (Q documentation)[https://github.com/kriskowal/q] for further details.
+
+#### Barrier (wait for multiple asynchronous results)
+
+`Q.all` waits until all promises are completed.

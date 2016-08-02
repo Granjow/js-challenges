@@ -1,0 +1,29 @@
+{
+  "name": "js-challenges",
+  "version": "0.0.1",
+  "description": "JavaScript challenges to get familiar with the language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Granjow/js-challenges.git"
+  },
+  "keywords": [
+    "javascript",
+    "es6",
+    "ecmascript",
+    "functional",
+    "programming"
+  ],
+  "author": "Simon A. Eugster <simon.eu@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Granjow/js-challenges/issues"
+  },
+  "homepage": "https://github.com/Granjow/js-challenges#readme",
+  "dependencies": {
+    "q": "^1.4.1"
+  }
+}
