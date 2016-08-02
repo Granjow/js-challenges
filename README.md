@@ -6,7 +6,7 @@ does *NOT* follow good practises! You have to write good code by yourself.
 
 Run them e.g. in WebStorm directly, or with node.js from the command line, to see the output.
 
-There are also **Q Challenges** for the library (Q)[https://www.npmjs.com/package/q] which examine
+There are also **Q Challenges** for the library [Q](https://www.npmjs.com/package/q) which examine
 some common asynchronous situations. To get started, first install the required npm modules:
 
     npm install
@@ -48,8 +48,28 @@ and others.
 
 ## Q Challenges
 
-See the (Q documentation)[https://github.com/kriskowal/q] for further details.
+See the [Q documentation](https://github.com/kriskowal/q) for further details.
 
 #### Barrier (wait for multiple asynchronous results)
 
 `Q.all` waits until all promises are completed.
+
+#### Propagation
+
+In asynchronous situations, one might have a situation like the following where arrows to the left show errors (i.e.
+the promise was rejected), and arrows to the right show a successful call.
+
+![Tree](q-challenges/img/then-tree.png)
+
+In Q, `resolve`s and `reject`s are passed on until they are handled (see the Propagation chapter in the documentation).
+A straight-forward attempt could look like this:
+
+![Propagation, not correct yet](q-challenges/img/propagate-v1.png)
+
+If `addFlour()` fails, Q skips all following success handlers until it arrives at the first error handler `cannotBake()`.
+Unfortunately, if `cannotBake()` is successful, execution continues and `bake()` is executed as well. For this case,
+it is necessary to create another execution branch.
+
+![Propagation, corrected](q-challenges/img/propagate-v2.png)
+
+`bake()` now ends directly or with `feedHogs()`.
