@@ -116,7 +116,25 @@ var takePicture = () => {
     }
 };
 
-// 1. Re-write the following code with Q's propagation mechanism such that no function is used more than once.
+var relax = () => {
+    var deferred = Q.defer();
+
+    console.log( 'Relaxing a bit ...' );
+    setTimeout( () => {
+        console.log( `Relaxing just a minute. (${Date.now() - start} ms)` );
+        deferred.resolve();
+    }, 400 );
+
+    return deferred.promise;
+};
+
+// 1. Modify the code below that you always relax() before taking the picture.
+// 2. Re-write the following code with Q's propagation mechanism such that no function is used more than once.
+//    The logic below contains redundancy. For example, at the end, you always want to take a picture (no matter what),
+//    and currently takePicture() is at the end of every branch of the decision tree. To relax() before taking a picture,
+//    all occurrences of takePicture() have to be modified.
+//    Use Propagation to remove this redundancy.
+//
 //    See the README.md for a hint.
 
 checkCar().then( () => {
