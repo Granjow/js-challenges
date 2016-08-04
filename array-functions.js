@@ -1,4 +1,5 @@
 var ages = [ 2, 3, 4, 10, 50, 42 ];
+var size = [ 23, 33.2, 34.5, 14.7, 6.543 ];
 
 // 1. Replace by Array.map()
 //    Bonus points for using arrow functions! (Applies to whole file!)
@@ -24,8 +25,6 @@ for ( var i = 0; i < ageObjects.length; i++ ) {
     }
 }
 // End
-
-var size = [ 23, 33.2, 34.5, 14.7, 6.543 ];
 
 // 4. Replace by arrow function
 var fMax = function ( a, b ) {

@@ -15,6 +15,7 @@ References:
 
 * **[GP]** *JavaScript: The Good Parts* by Donald Crockford
 * **[JP]** *JavaScript Patterns* by Stoyan Stefanov
+* **[UE6]** *[Understanding ECMAScript 6](https://leanpub.com/understandinges6/)* by Nicholas C. Zakas
 
 (*GP:37, Closure* means The Good Parts, Page 37, Chapter about Closure)
 
@@ -38,6 +39,33 @@ See *JP:64, Callbacks and Scope* and *GP:27, Invocation*
 
 The `this` object is bound to the global object for function calls (different for 
 [array functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)!).
+
+#### Immediate Invocation
+
+See *JP:69, Immediate Functions* and *[UE6, Creating Immediately-Invoked Function Expressions](https://leanpub.com/understandinges6/read#leanpub-auto-creating-immediately-invoked-function-expressions)*
+
+Functions can be invoked immediately without storing them in a variable with the normal
+syntax for function invocation. They are often wrapped in parentheses:
+
+    var x = ( function() { return calculatedResult; } )();
+
+#### Arrow Functions `() => {}`
+
+See *[UE6, Arrow Function Syntax](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)*
+
+Arrow functions are preferred for functional programming and behave differently than normal functions,
+for example, they do not bind `this`. This means that the following code works:
+
+    var A = function () {
+        this.x = [ 1, 2 ];
+        this.y = 10;
+    };
+    A.prototype = {
+        test: function () {
+            // We have access to the parent’s `this`!
+            var z = this.x.map( el => el + this.y );
+        }
+    };
 
 #### Array Functions
 
