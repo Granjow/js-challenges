@@ -2,6 +2,7 @@ var tasks = [ 'cleaning', 'gardening', 'cooking', 'fletching' ];
 
 // What is going wrong here? Why?
 // 1. Fix the callback function that is passed to setTimeout.
+//    Hint: See GP:39
 for ( var i = 0; i < tasks.length; i++ ) {
 
     var task = tasks[ i ],

@@ -6,9 +6,17 @@ var O = function ( x ) {
     return this;
 };
 
-var o = O( 42 );
-var p = O( 43 );
-console.log( o.x, p.x );
+var Q = function ( x ) {
+    this.x = x;
+    return this;
+};
+
+var o1 = O( 42 );
+var o2 = O( 43 );
+console.log( o1.x, o2.x );
+
+var q = Q( 55 );
+console.log( o1.x, o2.x, q.x );
 
 // o should have the value 42 and p should have the value 43.
 // 1. How can this be fixed?

@@ -24,7 +24,8 @@ References:
 See *GP:37, Closure* and *JP:107, Private Static Members*
 
 When a variable does not exist in the local scope, the compiler follows the scope tree
-up to the top until it finds it there (or not).
+up to the top until it finds it there (or not). In the following example, test() has 
+acces to a itself.
 
     var a = 42;
     function test() {
@@ -32,6 +33,13 @@ up to the top until it finds it there (or not).
     }
 
 This allows to implement private variables as well.
+
+Also in this example, the arrow function accesses `i` by reference, i.e. all the callbacks
+see the value of `i` when they are *executed* and not when they are created.
+
+    for ( var i = 0; i < 5; i++ ) {
+        setTimeout( () => console.log( i ), 100 );
+    }
 
 #### Invocation
 
